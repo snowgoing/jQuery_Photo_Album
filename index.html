@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<title>jQuery Photo Album</title>
+</head>
+<body>
+	<div id="app"></div>
+		
+	<div id="overlay"></div>
+
+	<script id="page1Template" type="text">
+	 	
+			<div class="page1">
+				<header>My Albums</header>
+				<div class="frontpage">
+					{{#albums}}
+					<div class="thumb">
+						<img id={{name}} src="{{thumb}}" />
+						<span class="title">{{name}}</span>
+					</div>
+					{{/albums}}
+				</div>
+			</div>
+		
+  	</script>
+	
+
+	<script id="page2Template" type="text">
+	 	<div class="wrapper">
+	 	<header class="page2">{{name}}</header>
+		 	
+				<ul class="nav">
+					{{#albums}}
+					<li class="albumButton">{{.}}</li>
+					{{/albums}}
+				</ul>
+			
+				
+			<div class="content">
+				{{#images}}
+				<div class="info">
+					<img id={{name}} src="{{img}}" />
+					<span>{{name}}</span>
+				</div>
+				{{/images}}	
+			</div>
+		</div>
+  	</script>
+
+	<script id="page3Template" type="text">
+	 	
+	 	<button>Back to {{albumName}}</button>
+		 <h2>{{name}}</h2>
+		 <img class="bigger" src="{{img}}" />
+  	</script>
+
+
+
+	<script   src="https://code.jquery.com/jquery-1.12.1.min.js"   integrity="sha256-I1nTg78tSrZev3kjvfdM5A5Ak/blglGzlaZANLPDl3I="   crossorigin="anonymous"></script>
+	<script src="js/mustache.min.js"></script>
+	<script type="text/javascript" src="js/data.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
